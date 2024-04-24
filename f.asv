@@ -1,8 +1,0 @@
-function z = f(x,y)
-switch nargin
-    case 1
-        y=0;
-end
-z = x*e^(-x^2)
-
-end
