@@ -1,0 +1,11 @@
+Jak se mění chyba vzhledem k rostoucímu n ? (Pokuste se i kvantifikovat.)
+Chyba se neustále zmenšuje k rostoucímu n, jelikož obdelníky se neustále přibližují
+křivce a začínají křivku kopírovat.
+Můžeme tento integrál vyhodnotit také pomocí lichoběžníkového pravidla? (Vysvětlete!)
+Ano, jelikož, když můžeme použít obdelník tak můžeme použít i lichoběžník, pokud se
+stále jedná o křivku. Využití lichoběžníků má taky své výhody, rychlejší konvergence, 
+menší chyby a lepší aproximace.
+Jaká vychází chyba integrace pro funkci a jaký je počet potřebných úrovní zjemnění?
+Odpovídá to vašemu očekávání? Vysvětlete!
+Chyba integrace je blízká nule, závisí to na počtu úrovní zjemnění a toleranci.
+Počet úrovní zjemnění záleží na složitosti funkce a měla by být adekvátní.
