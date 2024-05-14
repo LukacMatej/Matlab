@@ -4,11 +4,11 @@ function [x,res,k] = newton(f,fp,x0,tol,maxit)
     while k < maxit
         k = k + 1;
         xk1 = xk - f(xk) / fp(xk);
+        res = abs(xk - xk1);
         if abs(f(xk)) < tol
             break;
         end
         xk = xk1;
     end
     x = xk;
-    res = abs(f(xk) / f(xk1));
 end

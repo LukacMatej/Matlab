@@ -3,6 +3,7 @@ function [x,res,k] = newton_diff(f,x0,x1,tol,maxit)
     while k < maxit
         k = k + 1;
         dx = x1 - f(x1) / ((f(x1) - f(x0)) / (x1 - x0));
+        res = f(dx);
         if abs(f(dx)) < tol
             break;
         end
@@ -10,5 +11,4 @@ function [x,res,k] = newton_diff(f,x0,x1,tol,maxit)
         x1 = dx;
     end
     x = dx;
-    res = abs(f(dx) / f(x1));
 end

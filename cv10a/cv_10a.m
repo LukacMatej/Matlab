@@ -22,15 +22,20 @@ interder = @(x) 2 * x / a^2 + 2 * log(x + 0.5) / b^2;
 plot(x,intersection(x), 'g');
 fimplicit(intersection, 'black');
 
-inter1_1 = bisection(intersection, 0, 0.4, 1e-7, 1000);
-inter1_2 = newton(intersection, interder, 0, 1e-7, 1000);
-inter1_3 = newton_diff(intersection, 0, 0.4,1e-7,1000);
-
+[inter1_1,~,k1_1] = bisection(intersection, 0, 0.4, 1e-7, 1000);
+[inter1_2,~,k1_2] = newton(intersection, interder, 0, 1e-7, 1000);
+[inter1_3,~,k1_3] = newton_diff(intersection, 0, 0.4,1e-7,1000);
+k1_1
+k1_2
+k1_3
 x1 = (inter1_1 + inter1_2 + inter1_3)/3;
 
-inter2_1 = bisection(intersection, 0.5, 1, 1e-7, 1000);
-inter2_2 = newton(intersection, interder, 0.5, 1e-7, 1000);
-inter2_3 = newton_diff(intersection,0.5,1,1e-7,1000);
+[inter2_1,~,k2_1] = bisection(intersection, 0.5, 1, 1e-7, 1000);
+[inter2_2,~,k2_2] = newton(intersection, interder, 0.5, 1e-7, 1000);
+[inter2_3,~,k2_3] = newton_diff(intersection,0.5,1,1e-7,1000);
+k2_1
+k2_2
+k2_3
 x2 = (inter2_1 + inter2_2 + inter2_3)/3;
 
 saveas(gcf, 'graph.png');

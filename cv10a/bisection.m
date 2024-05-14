@@ -8,6 +8,7 @@ while k < maxit
   k = k + 1;
   xk = (a + b) / 2;
   fxk = f(xk);
+  res = abs(fxk);
   if abs(fxk) < tol
     break;
   end
@@ -18,5 +19,4 @@ while k < maxit
   end
 end
 x = xk;
-res = abs(f(xk) / f(x));
 end
