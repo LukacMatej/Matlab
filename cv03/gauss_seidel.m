@@ -1,31 +1,25 @@
 function [x,flag,rr,it,rv] = gauss_seidel(A,b,tol,maxit)
   n = size(A,1);
-  x_cr = b;
-  x_new = b;
-  rv(1,1) = norm(b-A*x_new);
-  rr = norm(b-A*x_new)/norm(b);
-  for it = 1:maxit
-    for i = 1:n
-      sum1 = 0;
-      for j = 1:n
-        if j ~= i
-          sum1 = sum1 + A(i, j) * x_new(j);
-        end
-      end
-      x_new(i, 1) = (1/A(i, i)) * (b(i) - sum1);
+  x = b;
+  rv(1) = norm(b-A*x);
+  rr = rv(1)/norm(b);
+  for i = 1:maxit
+    it = i;
+    for j = 1:n
+        sum1 = A(j, 1:j-1) * x(1:j-1);
+        sum2 = A(j, j+1:n) * x(j+1:n);
+        x(j) = (b(j) - sum1 - sum2) / A(j, j);
     end
-    rv = [rv; norm(b-A * x_new)];
-    rr = rv;norm(b-A * x)/norm(b);
-    if(isinf(rr))
-      flag = 4;
-      return
+    rv(i+1) = norm(b-A*x);
+    rr = rv(i+1)/ norm(b);
+    if isnan(rr) || isinf(rr)
+      flag=4;
+      return;
     end
-    if (rr < tol)
+    if rr < tol
       flag = 0;
+      return;
     end
-    if it == maxit
-      flag = 1;
-    end
-    x = x_new;
   end
-  end
+  flag = 1;
+end

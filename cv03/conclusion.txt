@@ -1,0 +1,14 @@
+Poisson matice
+Jacobiho metoda konveguje k 0 a končí na 107
+Gauss seidel metoda konverguje k 0 a končí na iteraci 54
+Pcg konverguje k 0 a končí na 5 iteracích
+
+Lehmer matice
+Jacobiho metoda diverguje a je zakončena flag 4
+Gauss seidel konverguje k 0 a končí na 165
+Pcg konverguje k 0 a končí na 24 iteracích.
+
+Dorr matice
+Jacobiho metoda konverguje k 0 a je zakončena maximálním počtem iterací
+Gauss seidel konverguje k 0 a končí 603 iterací
+Pcg diverguje a je zakončena flag 4

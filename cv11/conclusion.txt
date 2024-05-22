@@ -1,0 +1,3 @@
+Při větším zvoleném h u explicitní metody hodně osciluje, tudíž musíme zvolit menší.
+Implicitní funkce je nepřesná při příliš velkým zvoleném h kvůli težkému výpočtu a
+je přesnější při menším zvoleným h.
